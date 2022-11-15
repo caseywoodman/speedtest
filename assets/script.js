@@ -2,10 +2,15 @@
 let startQuizbtn = document.querySelector("#startQuiz");
 let questionDiv = document.querySelector("#questions");
 let questions = [
-  { title: "this is the first question?", choices: ["hi", "how", "do", "you"], answer: "hi" },
-  { title: "this is the second question?", choices: ["hi2", "how2", "d2o", "you2"], answer: "you2" },
+  { title: "How many words are in the sentence?", choices: ["5", "6", "7", "8"], answer: "7" },
+  { title: "What goes into a toaster?", choices: ["Toast", "Grilled Cheese", "Plates", "Bread"], answer: "Bread" },
+  { title: "What is 10*2-6*2", choices: ["28", "-100", "8", "-80"], answer: "8" },
+  { title: "How many times does a biweekly employee get paid in a year?", choices: ["26", "52", "13", "2"], answer: "26" },
 ];
-let questionsLength = (questions.length = 1);
+let questionsIndex = 1;
+let questionsLength = questions.length;
+let correctIndex = 0;
+
 // Functions
 function startQuiz() {
   createButtons(0);
@@ -20,6 +25,7 @@ function createButtons(index) {
   let buttonOne = document.createElement("button");
   buttonOne.textContent = questions[index].choices[0];
   buttonOne.dataset.answer = questions[index].answer;
+  //   buttonOne.dataset.correctIndex = questionsIndex;
   questionDiv.appendChild(buttonOne);
 
   let buttonTwo = document.createElement("button");
@@ -46,6 +52,12 @@ questionDiv.addEventListener("click", function (event) {
   let answer = event.target.dataset.answer;
 
   if (choice === answer) {
-    alert("Correct");
+    if (questionsIndex < questionsLength) {
+      alert("Correct");
+      createButtons(questionsIndex);
+      questionsIndex++;
+    } else {
+      alert("Game Over");
+    }
   }
 });
