@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bgc_black tc-green">
 
 <head>
     <meta charset="UTF-8">
@@ -11,29 +11,30 @@
 
 </head>
 
-<body>
+<body class="m-auto mwidth_1200">
     <!-- Header -->
     <header>
-        <img src="./assets/images/beat the clock icon.jpeg" alt="beat the clock image">
-        <a href="highscores" id="viewHighScoreBtn">View High Scores</a>
-        <div class="timer">TIMER: <span id="timerDisplay">30</span></div>
+        <Nav class="a_center bgc_green d-f j_between mb1 p1">
+            <h1 class="quizTitle ta-cen tc-black fs-2 f-bold">BEAT THE CLOCK!</h1>
+            <a class="p1 bgc_black ta-cen td-none tc-green fs-2" href="highscores" id="viewHighScoreBtn">VIEW HIGH
+                SCORES</a>
+        </Nav>
+        <div class="timer d-none">TIMER: <span id="timerDisplay">30</span></div>
     </header>
-    <h1 class="quizTitle">Answer all questions in 30 seconds</h1>
     <!-- Start the game -->
-    <div class="mwidth_1200 j_center wd-100">
-        <div class="bdr_solid bdr5 bdr_black bgc_red ht-25p d-f f-column m-auto" id="timerBar">
+    <div class="bdr_green bdr5 bdr_solid mwidth_1200 j_center wd-100">
+        <div class="bgc_red ht-25p d-f f-column m-auto" id="timerBar">
         </div>
-        <div class="a_center bdr_solid bdr5 bdr_black d-f f-column j_center p5">
+        <div class="a_center bdr_solid bdr5 bdr_black d-f f-column j_center height_500 p5">
             <div class="a_center d-f f-column j_center p1" id="starter">
-                <p>Click the button to start the challenge</p>
-                <button id="startQuiz">Start the challenge</button>
+                <button class="fs-2 button" id="startQuiz">START YOUR CLOCK!</button>
             </div>
             <!-- Questions -->
-            <div class="j_cen d-f f-column gap5 ta-cen" id="questions"></div>
-            <div id="initials"></div>
-            <div id="submitInitials"></div>
-            <div id="viewScores"></div>
-            <div id="playAgain"></div>
+            <div class="j_cen d-f f-column gap5 ta-cen wd-100 fs-2" id="questions"></div>
+            <div class="j_cen d-f f-column gap5 ta-cen wd-100" id="initials"></div>
+            <div class="j_cen d-f f-column gap5 ta-cen wd-100" id="submitInitials"></div>
+            <div class="j_cen d-f f-column gap5 ta-cen wd-100 fs-2" id="viewScores"></div>
+            <div class="j_cen d-f f-column gap5 ta-cen wd-100" id="playAgain"></div>
         </div>
     </div>
     <!-- Java Script Link -->

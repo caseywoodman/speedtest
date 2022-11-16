@@ -26,7 +26,7 @@ let topTen = 0;
 
 // Start Quiz Button
 function startQuiz() {
-  if (scores.length !== 0 && scores.length !== 10) {
+  if (scores.length !== 10) {
     topTen = 1;
   } else {
     topTen = scores[scores.length - 1].score;
@@ -46,7 +46,8 @@ function startTimer() {
     timerCount--;
     timerElement.textContent = timerCount;
     let timerPct = timerCount / 30;
-    document.querySelector("#timerBar").style.width = timerPct;
+    document.querySelector("#timerBar").style.width = timerPct * 100 + "%";
+    console.log(timerPct + "%");
     if (timerCount <= 10 && timerCount > 0) {
       timerElement.style.color = "red";
     } else if (timerCount > 10) {
@@ -70,6 +71,7 @@ function createButtons(index) {
   buttonOne.textContent = questions[index].choices[0];
   buttonOne.dataset.answer = questions[index].answer;
   buttonOne.setAttribute("id", "btnOne");
+  buttonOne.setAttribute("class", "button");
   //   buttonOne.dataset.correctIndex = questionsIndex;
   questionDiv.appendChild(buttonOne);
 
@@ -77,18 +79,21 @@ function createButtons(index) {
   buttonTwo.textContent = questions[index].choices[1];
   buttonTwo.dataset.answer = questions[index].answer;
   buttonTwo.setAttribute("id", "btnTwo");
+  buttonTwo.setAttribute("class", "button");
   questionDiv.appendChild(buttonTwo);
 
   let buttonThree = document.createElement("button");
   buttonThree.textContent = questions[index].choices[2];
   buttonThree.dataset.answer = questions[index].answer;
   buttonThree.setAttribute("id", "btnThree");
+  buttonThree.setAttribute("class", "button");
   questionDiv.appendChild(buttonThree);
 
   let buttonFour = document.createElement("button");
   buttonFour.textContent = questions[index].choices[3];
   buttonFour.dataset.answer = questions[index].answer;
   buttonFour.setAttribute("id", "btnFour");
+  buttonFour.setAttribute("class", "button");
   questionDiv.appendChild(buttonFour);
 }
 
@@ -125,18 +130,22 @@ function gameOver() {
   clearInterval(timer);
   questionsIndex = 1;
 
-  if (topTen < timerCount && timerCount !== 0) {
+  if (topTen <= timerCount && timerCount !== 0) {
     let enterBox = document.createElement("input");
     enterBox.setAttribute("placeholder", "ENTER YOUR INITIALS");
     enterBox.setAttribute("id", "initialsInput");
+    enterBox.setAttribute("class", "textInput");
     initialBox.appendChild(enterBox);
 
     let submitBtn = document.createElement("button");
     submitBtn.textContent = "SUBMIT YOUR HIGH SCORE";
+    submitBtn.setAttribute("class", "button");
     submitInitialsBtn.appendChild(submitBtn);
   } else {
     let again = document.createElement("button");
     again.textContent = "PLAY AGAIN?";
+    again.setAttribute("class", "button");
+
     playAgainBtn.appendChild(again);
   }
 }
@@ -175,6 +184,7 @@ function submitHighScore() {
   initialBox.innerHTML = "";
   let again = document.createElement("button");
   again.textContent = "PLAY AGAIN?";
+  again.setAttribute("class", "button");
   playAgainBtn.appendChild(again);
 }
 // Function Calls

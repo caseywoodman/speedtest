@@ -15,7 +15,23 @@ section {
 }
 
 /* Element Selectors */
-
+.button {
+    background-color: limegreen;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+.textInput {
+    background-color: black;
+    color: limegreen;
+    font-size: 1rem; 
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+    border: 4px limegreen solid;
+    margin-bottom: 1rem;
+}
 /* Classes */
 .a_center {
     align-items: center;
@@ -29,14 +45,23 @@ section {
 .bdr_black {
     border-color: black;
 }
+.bdr_green {
+    border-color: limegreen;
+}
 .bgc_green {
     background-color: green;
+}
+.bgc_black {
+    background-color: black;
 }
 .bgc_red {
     background-color: red;
 }
 .d-f {
     display: flex;
+}
+.d-none {
+    display: none;
 }
 .f-row {
     flex-direction: row;
@@ -47,17 +72,35 @@ section {
 .gap5 {
     gap: 5px;
 }
+.gap15 {
+    gap: 15px;
+}
 .ht-25p {
     height: 25px;
 }
 .j_center{
     justify-content: center;
 }
+.j_around {
+    justify-content: space-around;
+}
+.j_between {
+    justify-content: space-between;
+}
 .m-auto {
     margin: auto;
 }
+.mb1 {
+    margin-bottom: 1rem;
+}
 .mwidth_1200 {
     max-width: 1200px;
+}
+.height_500 {
+    height: 400px;
+}
+.p-5{
+    padding: .5rem;
 }
 .p1{
     padding: 1rem;
@@ -68,6 +111,31 @@ section {
 .ta-cen {
     text-align: center;
 }
+.tc-green {
+    color: limegreen;
+}
+.tc-black {
+    color: black;
+}
+.td-none {
+    text-decoration: none;
+}
+.fs-2 {
+    font-size: 2rem;
+}
+.f-bold {
+    font-weight: bold;
+}
 .wd-100{
     width: 100%;
+}
+
+.button:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+a:hover {
+    background-color: darkslategrey;
+    color: limegreen;
 }
