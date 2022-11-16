@@ -15,15 +15,27 @@
     <!-- Header -->
     <header>
         <img src="./assets/images/beat the clock icon.jpeg" alt="beat the clock image">
-        <a href="highscores">View High Scores</a>
-        <div class="timer">Timer</div>
+        <a href="highscores" id="viewHighScoreBtn">View High Scores</a>
+        <div class="timer">TIMER: <span id="timerDisplay">30</span></div>
     </header>
-    <h1 class="quizTitle">Answer all questions in 60 seconds</h1>
+    <h1 class="quizTitle">Answer all questions in 30 seconds</h1>
     <!-- Start the game -->
-    <p>Click the button to start the challenge</p>
-    <button id="startQuiz">Start the challenge</button>
-    <!-- Questions -->
-    <div id="questions"></div>
+    <div class="mwidth_1200 j_center wd-100">
+        <div class="bdr_solid bdr5 bdr_black bgc_red ht-25p d-f f-column m-auto" id="timerBar">
+        </div>
+        <div class="a_center bdr_solid bdr5 bdr_black d-f f-column j_center p5">
+            <div class="a_center d-f f-column j_center p1" id="starter">
+                <p>Click the button to start the challenge</p>
+                <button id="startQuiz">Start the challenge</button>
+            </div>
+            <!-- Questions -->
+            <div class="j_cen d-f f-column gap5 ta-cen" id="questions"></div>
+            <div id="initials"></div>
+            <div id="submitInitials"></div>
+            <div id="viewScores"></div>
+            <div id="playAgain"></div>
+        </div>
+    </div>
     <!-- Java Script Link -->
     <script src="./assets/script.js"></script>
 </body>

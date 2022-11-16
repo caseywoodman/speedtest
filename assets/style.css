@@ -17,3 +17,57 @@ section {
 /* Element Selectors */
 
 /* Classes */
+.a_center {
+    align-items: center;
+}
+.bdr_solid {
+    border-style: solid;
+}
+.bdr5 {
+    border-width: 5px;
+}
+.bdr_black {
+    border-color: black;
+}
+.bgc_green {
+    background-color: green;
+}
+.bgc_red {
+    background-color: red;
+}
+.d-f {
+    display: flex;
+}
+.f-row {
+    flex-direction: row;
+}
+.f-column {
+    flex-direction: column;
+}
+.gap5 {
+    gap: 5px;
+}
+.ht-25p {
+    height: 25px;
+}
+.j_center{
+    justify-content: center;
+}
+.m-auto {
+    margin: auto;
+}
+.mwidth_1200 {
+    max-width: 1200px;
+}
+.p1{
+    padding: 1rem;
+}
+.p5{
+    padding: 5rem;
+}
+.ta-cen {
+    text-align: center;
+}
+.wd-100{
+    width: 100%;
+}
