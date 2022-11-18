@@ -9,10 +9,10 @@ let timerElement = document.querySelector("#timerDisplay");
 let viewScores = document.querySelector("#viewScores");
 let showScores = document.querySelector("#viewHighScoreBtn");
 let questions = [
-  { title: "How many words are in the sentence?", choices: ["5", "6", "7", "8"], answer: "7" },
-  { title: "What goes into a toaster?", choices: ["Toast", "Grilled Cheese", "Plates", "Bread"], answer: "Bread" },
-  { title: "What is 10*2-6*2", choices: ["28", "-100", "8", "-80"], answer: "8" },
-  { title: "How many times does a biweekly employee get paid in a year?", choices: ["26", "52", "13", "2"], answer: "26" },
+  { title: "What two words does every programmer learn to code first?", choices: ["Code Now", "Git Pull", "Hello World", "Git Add"], answer: "Hello World" },
+  { title: "What is the golden rule of Coding?", choices: ["If it works, try to break it", "If it works, don't touch it", "If you don't know give up", "Coding is a habit"], answer: "If it works, don't touch it" },
+  { title: "What is the most popular programming problem?", choices: ["Forgetting to save", "Missing a Semi-Colon", "adding to much space", "enter two many times"], answer: "Missing a Semi-Colon" },
+  { title: "Why should you marry a programmer", choices: ["They are organized", "They like to style", "They are smart", "they are not afraid to Commit"], answer: "they are not afraid to Commit" },
 ];
 let questionsIndex = 1;
 let questionsLength = questions.length;
@@ -129,6 +129,7 @@ function gameOver() {
   viewScores.innerHTML = "";
   clearInterval(timer);
   questionsIndex = 1;
+  document.querySelector("#timerBar").style.width = 0;
 
   if (topTen <= timerCount && timerCount !== 0) {
     let enterBox = document.createElement("input");
@@ -211,6 +212,7 @@ questionDiv.addEventListener("click", function (event) {
       timerCount = timerCount - 10;
     } else {
       timerCount = 0;
+      timerElement.textContent = timerCount;
       gameOver();
     }
   }
